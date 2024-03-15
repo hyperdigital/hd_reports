@@ -11,9 +11,16 @@ use TYPO3\CMS\Install\Service\CoreVersionService;
 class ExternalReportController extends ActionController
 {
 
+    /**
+     * @var ExtensionConfiguration
+     */
+    private $extensionConfiguration;
+
     public function __construct(
-        private readonly ExtensionConfiguration $extensionConfiguration
-    ) {}
+        ExtensionConfiguration $extensionConfiguration
+    ) {
+        $this->extensionConfiguration = $extensionConfiguration;
+    }
 
     public function indexAction()
     {
