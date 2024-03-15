@@ -1,0 +1,17 @@
+reports = PAGE
+reports.typeNum = 44
+reports {
+    config {
+        disableAllHeaderCode = 1
+        admPanel = 0
+        debug = 0
+        additionalHeaders.10.header = Content-type:application/json
+    }
+    10 = USER
+    10 {
+      userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+      extensionName = HdReports
+      pluginName = ExternalReport
+      vendorName = Hyperdigital
+    }
+}

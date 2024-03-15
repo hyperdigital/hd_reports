@@ -1,0 +1,4 @@
+# cat=Login; type=string; label=Comma separated list of IPs to have access to the reports
+ipList =
+# cat=Login; type=string; label=Url access password (myurl.com?type=44&access[accessPassword])
+accessPassword = Protector!42
