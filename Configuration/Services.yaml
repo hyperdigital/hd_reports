@@ -7,3 +7,9 @@ services:
 
   Hyperdigital\HdReports\:
     resource: '../Classes/*'
+
+  Hyperdigital\HdReports\Command\AvailableUpdatesPushNotificationCommand:
+    tags:
+      - name: console.command
+        command: 'hdreports:availableUpdatesPushNotification'
+        description: 'Push notification when a new update is available'
