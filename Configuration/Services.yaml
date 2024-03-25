@@ -12,4 +12,10 @@ services:
     tags:
       - name: console.command
         command: 'hdreports:availableUpdatesPushNotification'
-        description: 'Push notification when a new update is available'
+        description: 'Push notification: available update'
+
+  Hyperdigital\HdReports\Command\AvailableUpdatesEmailNotificationCommand:
+    tags:
+      - name: console.command
+        command: 'hdreports:availableUpdatesEmailNotification'
+        description: 'Email notification: available update'
