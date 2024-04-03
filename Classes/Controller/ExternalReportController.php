@@ -42,6 +42,7 @@ class ExternalReportController extends ActionController
             $return = ['success' => true];
             $return['version'] = $typoVersion->getVersion();
             $return['latestVersion'] = $coreVersionService->getYoungestPatchRelease()->getVersion();
+            $return['isElts'] = $coreVersionService->getYoungestPatchRelease()->isElts();
 
             if ($coreVersionService->getYoungestPatchRelease()->getVersion() != $typoVersion->getVersion()) {
                 $return['versionNeedsUpdate'] = true;
@@ -49,6 +50,11 @@ class ExternalReportController extends ActionController
                 $return['versionNeedsUpdate'] = false;
             }
         }
-        return $this->jsonResponse(json_encode($return));
+        if (method_exists($this, 'jsonReponse')) {
+            return $this->jsonResponse(json_encode($return));
+        }
+
+        echo json_encode($return);
+        die();
     }
 }
